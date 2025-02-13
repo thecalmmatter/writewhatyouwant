@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Blog Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin: 20px auto;
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 90%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #ccc;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 AI Blog Generator</h1>
+    <form method="POST">
+        <input type="text" name="topic" placeholder="Enter a blog topic..." required>
+        <button type="submit">Generate Blog</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>🚀 AI-Generated Blog Post</h2>
+        
+        <!-- Adding professional LinkedIn-style formatting -->
+        <div class="linkedin-style">
+            <!-- Splitting content into paragraphs -->
+            {% for paragraph in result.split('\n') %}
+                {% if paragraph.strip() != "" %}
+                    <p>{{ paragraph }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <hr> <!-- Separator for better clarity -->
+        
+        <!-- Call-to-action buttons -->
+        <div class="cta-buttons">
+            <button onclick="copyToClipboard()">📋 Copy Text</button>
+            <button onclick="downloadText()">⬇️ Download</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Copy & Download functionality -->
+    <script>
+        function copyToClipboard() {
+            const text = document.querySelector('.linkedin-style').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard!");
+            });
+        }
+
+        function downloadText() {
+            const text = document.querySelector('.linkedin-style').innerText;
+            const blob = new Blob([text], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = "LinkedIn_Post.txt";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+
+    <!-- Styling for LinkedIn-style formatting -->
+    <style>
+        .result {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .linkedin-style {
+            font-size: 18px;
+            line-height: 1.6;
+            font-family: "Arial", sans-serif;
+            color: #333;
+            padding: 10px;
+            border-left: 5px solid #0073b1; /* LinkedIn Blue */
+        }
+
+        .linkedin-style p {
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cta-buttons button {
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .cta-buttons button:hover {
+            background-color: #005582;
+        }
+    </style>
+{% endif %}
+</body>
+</html>

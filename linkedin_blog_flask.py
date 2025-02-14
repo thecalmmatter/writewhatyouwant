@@ -108,7 +108,7 @@ crew = Crew(
 )
 
     # Crew Execution Setup
-crew = Crew(agents=[planner, writer, editor], tasks=[plan, write, edit], verbose=True)
+crew = Crew(agents=[hook_generator, planner, writer, editor], tasks=[hook, plan, write, edit], verbose=True)
 
 @app.route("/", methods=["GET", "POST"])
 def home():

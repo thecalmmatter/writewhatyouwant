@@ -1,11 +1,5 @@
 {
-    "version": 2,
-    "functions": {
-        "api/**": {
-            "runtime": "vercel-python@3.12"
-        }
-    },
-    "routes": [
-        { "src": "/(.*)", "dest": "/api/linkedin_blog_flask.py" }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/api/linkedin_blog_flask" }
     ]
-}
+  }

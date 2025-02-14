@@ -3,4 +3,4 @@
     "functions": [{ "api/**": { "runtime": "@vercel/python"}}],
     "builds": [{ "src": "linkedin_blog_flask.py", "use": "@vercel/python" }],
     "routes": [{ "src": "/(.*)", "dest": "/linkedin_blog_flask.py" }]
-  }p
+}

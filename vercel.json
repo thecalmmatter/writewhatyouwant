@@ -1,6 +1,11 @@
 {
     "version": 2,
-    "functions": [{ "api/**": { "runtime": "@vercel/python"}}],
-    "builds": [{ "src": "linkedin_blog_flask.py", "use": "@vercel/python" }],
-    "routes": [{ "src": "/(.*)", "dest": "/linkedin_blog_flask.py" }]
+    "functions": {
+        "api/**": {
+            "runtime": "@vercel/python"
+        }
+    },
+    "routes": [
+        { "src": "/(.*)", "dest": "/api/linkedin_blog_flask.py" }
+    ]
 }

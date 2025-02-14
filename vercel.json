@@ -1,0 +1,5 @@
+{
+    "version": 2,
+    "builds": [{ "src": "linkedin_blog_flask.py", "use": "@vercel/python" }],
+    "routes": [{ "src": "index.js", "/(.*)": "/linkedin_blog_flask.py" }]
+  }

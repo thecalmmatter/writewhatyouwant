@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, render_template
 from crewai import Agent, Task, Crew, LLM
-import streamlit as st
 import os
 
 
@@ -122,4 +121,4 @@ def home():
     return render_template("index.html", result=result)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=80, debug=True)

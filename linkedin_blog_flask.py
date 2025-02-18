@@ -19,7 +19,7 @@ planner = Agent(
     role="Content Planner",
     goal="Plan engaging and factually accurate content on {topic}",
     backstory=(
-        "You're responsible for planning a New York Times article on {topic}. "
+        "You're responsible for planning a 700 words New York Times article on {topic}. "
         "You collect information that helps the audience learn and make informed decisions. "
         "Your work serves as the foundation for the Content Writer."
     ),
@@ -78,7 +78,7 @@ plan = Task(
 
 write = Task(
     description=(
-        "1. Use the content plan to craft a compelling 400 word New York Times post on {topic}.\n"
+        "1. Use the content plan to craft a compelling New York Times post on {topic}.\n"
         "2. Naturally integrate SEO keywords.\n"
         "3. Structure sections/subtitles engagingly.\n"
         "4. Ensure the post has an engaging introduction, insightful body, and strong conclusion.\n"

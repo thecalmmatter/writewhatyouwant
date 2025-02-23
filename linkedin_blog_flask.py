@@ -48,6 +48,7 @@ writer = Agent(
         "And keep pushing the conversation forward."
         "Share this to inspire others to action call."
         "Your writing is balanced and quirky acknowledging when statements are opinions."
+        "Remove all hashes from the content if any found"
     ),
     allow_delegation=False,
     verbose=True,

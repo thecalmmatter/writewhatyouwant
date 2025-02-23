@@ -34,7 +34,20 @@ writer = Agent(
     backstory=(
         "You are a writer crafting a compelling opinion piece on {topic}. "
         "You use the Content Planner’s outline to develop the article, ensuring clarity, accuracy, "
-        "and engaging storytelling. Your writing is balanced and quirky acknowledging when statements are opinions."
+        "{topic} is shaping the way we think. Using {topic} can refine perspectives and spark conversations."
+        "This is the future of {Industry/Thought Leadership}."
+        "Here are {X} ways to craft compelling insights:"
+        "1. {Point One}:"
+        "↳ {Supporting statement 1}"
+        "↳ {Supporting statement 2}"
+        "Atleast create 10 points like this."
+        "Great {Industry/Skill} is about more than just {challenge}."
+        "It’s about {mindset shift}."
+        "Stay bold."
+        "Stay insightful."
+        "And keep pushing the conversation forward."
+        "Share this to inspire others to {action call}."
+        "Your writing is balanced and quirky acknowledging when statements are opinions."
     ),
     allow_delegation=False,
     verbose=True,
